@@ -1,0 +1,113 @@
+@import 'open-props/style';
+@import 'open-props/normalize';
+@import 'open-props/buttons';
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+p {
+  max-inline-size: unset;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 0;
+}
+
+a {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+}
+
+.container {
+  max-inline-size: var(--size-lg);
+  margin-inline: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.block {
+  display: block;
+}
+
+.box {
+  padding: var(--size-fluid-1);
+  border: var(--border-size-1) solid;
+  --box-clr-bg: var(--cyan-0);
+  --box-clr-text: var(--cyan-12);
+  --box-clr-bg--hover: var(--cyan-3);
+  color: var(--box-clr-text);
+  background-color: var(--box-clr-bg);
+}
+
+.box:hover {
+  background-color: var(--box-clr-bg--hover);
+}
+
+.box * {
+  color: inherit;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-block: 0;
+}
+
+.stack > * + * {
+  --space: var(--size-fluid-3);
+  margin-block-start: var(--space, 1.5rem);
+}
+
+.grid {
+  display: grid;
+}
+
+@supports (width: min(var(--size-xxs), 100%)) {
+  .grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--size-xxs), 100%), 1fr)
+    );
+    grid-auto-rows: minmax(0, 1fr);
+  }
+}
+
+.center {
+  max-inline-size: max-content;
+  margin-inline: auto;
+}
+
+.two-cols {
+  display: grid;
+  gap: var(--size-2);
+  grid-template-columns: repeat(2, minmax(5rem, max-content));
+}
+
+.perfect-center {
+  display: grid;
+  place-items: center;
+}
+
+.icon--big {
+  font-size: var(--font-size-7);
+}
+
+.continent-card {
+  padding: var(--size-fluid-4);
+}
